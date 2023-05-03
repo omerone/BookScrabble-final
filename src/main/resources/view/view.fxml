@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/19"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="view.Controller">
+   <center>
+      <VBox alignment="CENTER" onDragDetected="#settings" prefHeight="605.0" prefWidth="745.0" spacing="20.0">
+          <padding>
+              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+          </padding>
+          <Button onAction="#playLocal" prefWidth="200.0" text="Play local ">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Button>
+         <Button minWidth="200.0" onAction="#guestMode" text="Play In Guest Mode" textAlignment="CENTER">
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+         </Button>
+         <Button mnemonicParsing="false" onAction="#settings" text="Settings " textAlignment="CENTER">
+            <VBox.margin>
+               <Insets top="50.0" />
+            </VBox.margin>
+         </Button>
+      </VBox>
+   </center>
+   <top>
+      <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="36.0" prefWidth="241.0" text="BookScrrable" textAlignment="CENTER" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Broadway" size="32.0" />
+         </font>
+         <effect>
+            <Blend mode="COLOR_DODGE" />
+         </effect>
+         <graphic>
+            <Label />
+         </graphic>
+         <BorderPane.margin>
+            <Insets top="50.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+   <bottom>
+      <Label text="in local mode you can play up tp 4 players" BorderPane.alignment="CENTER">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Label>
+   </bottom>
+</BorderPane>
