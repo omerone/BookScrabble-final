@@ -5,4 +5,6 @@ module view.bookscrabblefinal {
 
     opens view to javafx.fxml;
     exports view;
+    exports model.logical;
+    opens model.logical to javafx.fxml;
 }

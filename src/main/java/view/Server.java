@@ -1,12 +1,15 @@
 package view;
 
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class Server extends Thread{
+public class Server extends Thread  {
     @Override
     public void run() {
         super.run();

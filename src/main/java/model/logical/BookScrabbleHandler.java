@@ -6,7 +6,7 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class BookScrabbleHandler implements ClientHandler{
+public abstract class BookScrabbleHandler implements ClientHandler{
 
     String line;
     String[] words;
