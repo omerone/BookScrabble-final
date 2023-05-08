@@ -12,6 +12,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import model.logical.ClientHandler;
+import model.logical.MyServer;
 
 import java.io.IOException;
 
@@ -80,6 +82,7 @@ public class Controller implements Observable {
 //
 //            }
             myLable.setText("Connect successfully to the server ! ");
+            myLable.styleProperty().setValue("-fx-text-fill: green");
         }
         catch (NumberFormatException e){
             myLable.setText("Please enter a valid IP and valid Port");
