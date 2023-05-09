@@ -55,10 +55,7 @@ public class Controller implements Observable {
     }
 
     //server com.example.demo.test
-    public void serverAndClientTest(){
-        Server server = new Server();
-        server.connectClient();
-    }
+
 
 
     @FXML private Label myLable;
