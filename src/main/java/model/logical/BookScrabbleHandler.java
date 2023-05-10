@@ -1,54 +1,45 @@
 package model.logical;
 
-
-import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.InputStream;
 import java.io.PrintWriter;
+import java.util.Arrays;
 import java.util.Scanner;
 
-public abstract class BookScrabbleHandler implements ClientHandler{
-
-    String line;
-    String[] words;
+public class BookScrabbleHandler implements ClientHandler{
+    DictionaryManager dm;
+    PrintWriter out;
+    Scanner in;
 
     @Override
-    public void handleClient(InputStream inFromclient , OutputStream outToClient) {
-        Scanner scanner = new Scanner(inFromclient);
-        PrintWriter out = new PrintWriter(outToClient);
-        try {
-            if(scanner.hasNextLine()){
-                line = scanner.nextLine();
-                words = line.split(",");
-            }
-        } catch (Exception e){e.printStackTrace();}
-        DictionaryManager dM = new DictionaryManager();
+    public void handleClient(InputStream inFromClient, OutputStream outToClient)
+    {
+        out = new PrintWriter(outToClient);
+        in = new Scanner(inFromClient);
+        dm = DictionaryManager.get();
 
-        String words2 [] = new String[words.length-1];
-        for(int i =0 , s=1; s<words.length; i++ , s++){
-            words2[i] = words[s];
-        }
+        String[] inputFromClient = in.next().split(",");
+        boolean wordExists = false;
 
-        boolean flag;
-        if(words[0].equals("C")){
-            flag = dM.challenge(words2);
+        if(inputFromClient.equals('Q'))
+        {
+            //Deletes the 'Q' from the array, calling quary with just the files names and the word to check
+            wordExists = dm.query(Arrays.copyOfRange(inputFromClient, 1, inputFromClient.length));
         }
-        else {
-            flag = dM.query(words2);
+        else
+        {//'C'
+            //Deletes the 'C' from the array, calling challenge with just the files names and the word to check
+            wordExists = dm.challenge(Arrays.copyOfRange(inputFromClient, 1, inputFromClient.length));
         }
 
-        if(flag){
-            out.println("true");
-            out.flush();
-        }
-        else {
-            out.println("false");
-            out.flush();
-        }
-        out.close();
+        out.println(wordExists ? "true" : "false");
+        out.flush();
     }
 
     @Override
-    public void close() {
-
+    public void close()
+    {
+        out.close();
+        in.close();
     }
 }

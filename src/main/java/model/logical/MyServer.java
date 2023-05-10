@@ -1,69 +1,68 @@
 package model.logical;
 
-
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
 
 public class MyServer {
 
-    private int port;
-    private ClientHandler ch;
-    private volatile boolean stop;
+    int port;
+    ClientHandler ch;
+    volatile boolean stop;
 
-    public MyServer(int port , ClientHandler clientHandler){
+    public MyServer(int port, ClientHandler ch)
+    {
         this.port = port;
-        this.ch = clientHandler;
-        this.stop = false;
+        this.ch = ch;
+        stop = false;
     }
 
-    public void start (){
-        new Thread(()-> {
-            try {
-                runServer();
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-        }).start();
+    public void start()
+    {
+        new Thread(()->runServer()).start();
     }
 
-	public void close() {
-        stop = true;
-    }
+    private void runServer()
+    {
+        ServerSocket server = null;
+        try
+        {
+            server = new ServerSocket(port);
+            server.setSoTimeout(1000);
+            while(!stop)
+            {
+                try
+                {
+                    Socket client = server.accept();
+                    try
+                    {
+                        ch.handleClient(client.getInputStream(), client.getOutputStream());
 
-    private void runServer()throws Exception{
-        ServerSocket server = new ServerSocket(port);
-        server.setSoTimeout(1000);
-        while (!stop) {
-            try {
-                Socket aClient = server.accept();
-                try {
-                    ch.handleClient(aClient.getInputStream(), aClient.getOutputStream());
+                        //client.getInputStream().close();
+                        //client.getOutputStream().close();
+                        client.close();
 
-                    aClient.getInputStream();
-                    aClient.getOutputStream();
-
-                } catch (IOException e) {
-                    e.printStackTrace();
+                    }
+                    catch (IOException e)
+                    {
+                        System.out.println("IOException");
+                    }
                 }
-            } catch (SocketTimeoutException e) {
-                e.printStackTrace();
+                catch (SocketTimeoutException e)
+                {
+                    System.out.println("SocketTimeoutException");
+                }
             }
-        }
-        server.close();
-    }
 
-    public void readInputAndSend(BufferedReader in , PrintWriter out , String exit_str){
-        try {
-            String line;
-            while (!(line = in.readLine()).equals(exit_str)){
-                out.println(line);
-                out.flush();
-            }
+            server.close();
+        } catch(Exception e)
+        {
+            System.out.println(e);
         }
-        catch (Exception e){e.printStackTrace();}
+    }
+    void close()
+    {
+        stop = true;
     }
 }
