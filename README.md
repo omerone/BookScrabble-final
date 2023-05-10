@@ -9,10 +9,10 @@
 * Project presentation video - will be added
 
 ## Collaborators
-* [Dan Davidovich](https://github.com/Davidovichdan)
-* [Eviatar Didon](https://github.com/Eviatar109)
-* [Matan Drabkin](https://github.com/matand380)
-* [Tal Avraham](https://github.com/Tavraham)
+* [Ori Joseph](https://github.com/Davidovichdan)
+* [Nitzan Toledo](https://github.com/Eviatar109)
+* [Tomer Mizrahi](https://github.com/matand380)
+* [Omer Maoz](https://github.com/Tavraham)
 
 ## Communication and Reporting
 Communication and reporting will be done through the following channels:
