@@ -29,7 +29,7 @@ easily find inspiration for their next move.
  * Project presentation video - will be added
 
 ## Gantt
-![image](src files/Gantt.pdf)
+![image]([src files/Gantt.pdf](https://github.com/omerone/BookScrabble-final/blob/ff2094f290df127773f693ab6e24d49a3198d144/src%20files/Gantt.pdf))
 
 
 ## Features
