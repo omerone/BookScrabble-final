@@ -5,20 +5,17 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0"
-      xmlns="http://javafx.com/javafx/19"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="view.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controller">
    <children>
-      <Button layoutX="221.0" layoutY="147.0" mnemonicParsing="false" text="Play">
+      <Button layoutX="397.0" layoutY="226.0" mnemonicParsing="false" text="Play">
          <font>
-            <Font size="50.0" />
+            <Font size="81.0" />
          </font>
       </Button>
-      <Button layoutX="545.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToHomeScreen" text="Back" />
-      <Text layoutX="186.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BookScrabble">
+      <Button layoutX="934.0" layoutY="37.0" mnemonicParsing="false" onAction="#switchToHomeScreen" text="Back" />
+      <Text layoutX="373.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BookScrabble">
          <font>
-            <Font name="Broadway" size="30.0" />
+            <Font size="50.0" />
          </font>
       </Text>
    </children>

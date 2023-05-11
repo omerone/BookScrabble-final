@@ -9,14 +9,9 @@ In this version of the game, all the words must be related to books, authors, or
 - [Usage](Usage.md)
 
 ## Overview
-The Book Scrabble Game is a Desktop application that allows players to create an
-account, join or start a game, and play against other players online. The game board
-consists of a grid of letter tiles, and players take turns placing tiles on the board to form
-words. Points are awarded based on the length and complexity of the words, as well as any
-bonus tiles that are used.
+A Desktop application named Book Scrabble Game permits users to establish an account, either create or participate in a game, and engage in online gameplay against other players. The game is played on a board with a grid of letter tiles, where players alternate in placing tiles to create words. The score is determined by the words' length and complexity, in addition to any bonus tiles used.
 
-The game also includes a dictionary of book-related words and phrases, so players can
-easily find inspiration for their next move.
+Moreover, the game comprises of a lexicon of literary terms and expressions, enabling players to effortlessly discover ideas for their upcoming moves.
 
 ## Collaborators
 * [Omer Maoz](https://github.com/Omerone)
@@ -29,7 +24,8 @@ easily find inspiration for their next move.
  * Project presentation video - will be added
 
 ## Gantt
-![image](https://user-images.githubusercontent.com/118439273/230920866-38d71903-4875-4e5c-8094-2b03d927cd58.png)
+
+![image](https://github.com/omerone/BookScrabble-final/blob/b5e6c3d29453609e9c80ef96503630f3cc3388cd/src%20files/Gantt.jpg)
 
 
 ## Features
@@ -76,29 +72,39 @@ o Squares that triple the value of the entire word (red)
 
 
 ### Rules:
+1. Players will draw a letter tile randomly from the bag.
+2. The order of players will be determined based on the order of the letters drawn, ranging from the smallest to the largest. If an empty tile is drawn, it will be returned to the bag and another one will be drawn instead.
+3. All tiles will be returned to the bag.
+4. Each player will randomly draw seven tiles.
+5. The first player (who drew the smallest letter in the drawing) must compose a legal word that goes through the central slot (the star) on the board. Only he will receive a double score for it. Then he will draw tiles from the bag to have a full set of seven tiles again.
+6. In turn, each player will construct a legal word from the tiles they have. Each word must intersect with an existing word on the board, similar to a crossword puzzle. After forming the word, the player will replenish their hand by drawing seven tiles from the bag. The player's score will accumulate based on all words created on the board following the placement of the tiles:
+- Tiles placed on double or triple letter squares will have their value doubled or tripled, respectively.
+- The word will receive the sum of its tile value.
+- This amount will be multiplied by two or three for each tile that is placed on a double word or triple word square, respectively. For instance, it is possible to multiply by 4 or 9 if the word encompasses two double word or triple word squares.
+- The aforementioned calculation is valid for each new word created on the board following the turn.
+7. A player who is unable to form a legal word will skip their turn.
+8. The game will conclude after N rounds."
 
-For the project, we will define a slightly simpler set of rules than the original game:
-1. Each player randomly draws a tile from the bag
-2. The order of the players is determined by the order of the letters drawn (from smallest to largest)
-a. If an empty tile is drawn, we will return it to the bag and draw another one.
-3. All the tiles return to the bag
-4. Each player randomly draws 7 tiles
-5. The first player (the one who drew the smallest letter in the lottery) must form a legal word
-that passes through the central slot (the star) on the board.
-a. Only he gets a double score for it.
-b. He completes from the bag so that he has 7 tiles again.
-6. Gradually, each player, in turn, assembles a legal word from the tiles in his possession
-a. When, as in a crossword puzzle, each word must rest on one of the tiles on the board.
-b. After writing the word, the player adds 7 tiles from the sack
-c. His score is accumulated according to all the words created on the board following the placement of the tiles
-i. Tiles that are placed on double or triple letter squares, their value will be doubled or tripled respectively
-ii. Then the word gets the sum of its tile value
-iii. This amount will be doubled or tripled for each word multiplication or tripling slot that is one of the tiles
-superimposed on it (that is, it is possible, for example, to multiply by 4 or 9 if the word took two).
-double word or triple word slots respectively (
-iv. The above calculation is true for every new word created on the board following the placement in the queue
-7. A player who cannot form a legal word gives up his turn.
-8. The game will end after N rounds.
+### User Story:
+- As an end-user, I want to understand the rules of Book Scrabble so that I can play the game effectively and enjoyably.
+User Stories for each feature/functionality:
+- As a player, I want to randomly draw a tile from the bag to determine my order in the game, so that the game is fair and unpredictable.
+- As a player, I want the order of players to be determined by the order of the letters drawn (from smallest to largest), so that the game is fair and unpredictable.
+- As a player, I want to return any empty tile drawn back to the bag and draw another one, so that the game remains fair and consistent.
+- As a player, I want to randomly draw 7 tiles to start the game, so that I can start forming words on the board.
+- As the first player, I want to form a legal word that passes through the central slot (the star) on the board, so that I can score double points for it.
+- As a player, I want to complete from the bag after forming a word, so that I always have 7 tiles in my possession.
+- As a player, I want to assemble a legal word from the tiles in my possession, resting on one of the tiles on the board, so that I can score points and add new words to the board.
+- As a player, I want to add 7 tiles from the bag after forming a word, so that I can continue forming new words on the board.
+- As a player, I want my score to be accumulated according to all the words created on the board following the placement of the tiles, so that I can keep track of my score.
+- As a player, I want the value of tiles placed on double or triple letter squares to be doubled or tripled respectively, so that I can score more points.
+- As a player, I want the value of words to be doubled or tripled for each word multiplication or tripling slot that is one of the tiles superimposed on it, so that I can score more points.
+- As a player, I want to be able to multiply my score by 4 or 9 if the word took two double word or triple word slots respectively, so that I can score even more points.
+- As a player, I want the above calculation to be true for every new word created on the board following the placement in the queue, so that I can keep track of my score.
+- As a player, I want to give up my turn if I cannot form a legal word, so that the game can continue.
+- As a player, I want the game to end after N rounds, so that there is a clear ending to the game.
+- As a player, I want a legal word to meet all of the following conditions: be written from left to right or from top to bottom (and not in any other way), appear in one of the books chosen for the game, lean on one of the existing tiles on the board, and not produce other illegal words on the board, so that the game remains fair and consistent.
+
 
 A legal word must meet all of the following conditions:
 <<<<<<< HEAD
