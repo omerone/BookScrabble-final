@@ -78,12 +78,13 @@ o Squares that triple the value of the entire word (red)
 4. Each player will randomly draw seven tiles.
 5. The first player (who drew the smallest letter in the drawing) must compose a legal word that goes through the central slot (the star) on the board. Only he will receive a double score for it. Then he will draw tiles from the bag to have a full set of seven tiles again.
 6. In turn, each player will construct a legal word from the tiles they have. Each word must intersect with an existing word on the board, similar to a crossword puzzle. After forming the word, the player will replenish their hand by drawing seven tiles from the bag. The player's score will accumulate based on all words created on the board following the placement of the tiles:
-i. Tiles placed on double or triple letter squares will have their value doubled or tripled, respectively.
-ii. The word will receive the sum of its tile value.
-iii. This amount will be multiplied by two or three for each tile that is placed on a double word or triple word square, respectively. For instance, it is possible to multiply by 4 or 9 if the word encompasses two double word or triple word squares.
-iiii. The aforementioned calculation is valid for each new word created on the board following the turn.
+- Tiles placed on double or triple letter squares will have their value doubled or tripled, respectively.
+- The word will receive the sum of its tile value.
+- This amount will be multiplied by two or three for each tile that is placed on a double word or triple word square, respectively. For instance, it is possible to multiply by 4 or 9 if the word encompasses two double word or triple word squares.
+- The aforementioned calculation is valid for each new word created on the board following the turn.
 7. A player who is unable to form a legal word will skip their turn.
 8. The game will conclude after N rounds."
+
 
 
 
