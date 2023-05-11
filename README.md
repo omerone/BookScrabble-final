@@ -19,10 +19,10 @@ The game also includes a dictionary of book-related words and phrases, so player
 easily find inspiration for their next move.
 
 ## Collaborators
-* [Dor Sonego](https://github.com/Dorsonego)
-* [Yuval Zirin](https://github.com/Yuvalzirin)
-* [Kobi Abu](https://github.com/Kobiabu)
-* [Liav Nadam](https://github.com/Liavnadam)
+* [Omer Maoz](https://github.com/Omerone)
+* [Tomer Mizrahi](https://github.com/TomerMiz10)
+* [Ori Joseph](https://github.com/)
+* [Nitzan Toledo](https://github.com/)
 
 ## Video links
  * Demo video - will be added
