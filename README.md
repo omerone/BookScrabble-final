@@ -9,14 +9,9 @@ In this version of the game, all the words must be related to books, authors, or
 - [Usage](Usage.md)
 
 ## Overview
-The Book Scrabble Game is a Desktop application that allows players to create an
-account, join or start a game, and play against other players online. The game board
-consists of a grid of letter tiles, and players take turns placing tiles on the board to form
-words. Points are awarded based on the length and complexity of the words, as well as any
-bonus tiles that are used.
+A Desktop application named Book Scrabble Game permits users to establish an account, either create or participate in a game, and engage in online gameplay against other players. The game is played on a board with a grid of letter tiles, where players alternate in placing tiles to create words. The score is determined by the words' length and complexity, in addition to any bonus tiles used.
 
-The game also includes a dictionary of book-related words and phrases, so players can
-easily find inspiration for their next move.
+Moreover, the game comprises of a lexicon of literary terms and expressions, enabling players to effortlessly discover ideas for their upcoming moves.
 
 ## Collaborators
 * [Omer Maoz](https://github.com/Omerone)
@@ -100,6 +95,21 @@ double word or triple word slots respectively (
 iv. The above calculation is true for every new word created on the board following the placement in the queue
 7. A player who cannot form a legal word gives up his turn.
 8. The game will end after N rounds.
+
+1. Players will draw a letter tile randomly from the bag.
+2. The order of players will be determined based on the order of the letters drawn, ranging from the smallest to the largest. If an empty tile is drawn, it will be returned to the bag and another one will be drawn instead.
+3. All tiles will be returned to the bag.
+4. Each player will randomly draw seven tiles.
+5. The first player (who drew the smallest letter in the drawing) must compose a legal word that goes through the central slot (the star) on the board. Only he will receive a double score for it. Then he will draw tiles from the bag to have a full set of seven tiles again.
+6. In turn, each player will construct a legal word from the tiles they have. Each word must intersect with an existing word on the board, similar to a crossword puzzle. After forming the word, the player will replenish their hand by drawing seven tiles from the bag. The player's score will accumulate based on all words created on the board following the placement of the tiles:
+i. Tiles placed on double or triple letter squares will have their value doubled or tripled, respectively.
+ii. The word will receive the sum of its tile value.
+iii. This amount will be multiplied by two or three for each tile that is placed on a double word or triple word square, respectively. For instance, it is possible to multiply by 4 or 9 if the word encompasses two double word or triple word squares.
+iiii. The aforementioned calculation is valid for each new word created on the board following the turn.
+7. A player who is unable to form a legal word will skip their turn.
+8. The game will conclude after N rounds."
+
+
 
 A legal word must meet all of the following conditions:
 <<<<<<< HEAD
