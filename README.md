@@ -21,8 +21,8 @@ easily find inspiration for their next move.
 ## Collaborators
 * [Omer Maoz](https://github.com/Omerone)
 * [Tomer Mizrahi](https://github.com/TomerMiz10)
-* [Ori Joseph](https://github.com/)
-* [Nitzan Toledo](https://github.com/)
+* [Ori Joseph](https://github.com/josephori)
+* [Nitzan Toledo](https://github.com/nitzanto)
 
 ## Video links
  * Demo video - will be added
