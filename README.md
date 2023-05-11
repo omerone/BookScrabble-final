@@ -72,7 +72,6 @@ o Squares that triple the value of the entire word (red)
 
 
 ### Rules:
-
 1. Players will draw a letter tile randomly from the bag.
 2. The order of players will be determined based on the order of the letters drawn, ranging from the smallest to the largest. If an empty tile is drawn, it will be returned to the bag and another one will be drawn instead.
 3. All tiles will be returned to the bag.
