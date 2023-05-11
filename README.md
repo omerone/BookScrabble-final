@@ -73,29 +73,6 @@ o Squares that triple the value of the entire word (red)
 
 ### Rules:
 
-For the project, we will define a slightly simpler set of rules than the original game:
-1. Each player randomly draws a tile from the bag
-2. The order of the players is determined by the order of the letters drawn (from smallest to largest)
-a. If an empty tile is drawn, we will return it to the bag and draw another one.
-3. All the tiles return to the bag
-4. Each player randomly draws 7 tiles
-5. The first player (the one who drew the smallest letter in the lottery) must form a legal word
-that passes through the central slot (the star) on the board.
-a. Only he gets a double score for it.
-b. He completes from the bag so that he has 7 tiles again.
-6. Gradually, each player, in turn, assembles a legal word from the tiles in his possession
-a. When, as in a crossword puzzle, each word must rest on one of the tiles on the board.
-b. After writing the word, the player adds 7 tiles from the sack
-c. His score is accumulated according to all the words created on the board following the placement of the tiles
-i. Tiles that are placed on double or triple letter squares, their value will be doubled or tripled respectively
-ii. Then the word gets the sum of its tile value
-iii. This amount will be doubled or tripled for each word multiplication or tripling slot that is one of the tiles
-superimposed on it (that is, it is possible, for example, to multiply by 4 or 9 if the word took two).
-double word or triple word slots respectively (
-iv. The above calculation is true for every new word created on the board following the placement in the queue
-7. A player who cannot form a legal word gives up his turn.
-8. The game will end after N rounds.
-
 1. Players will draw a letter tile randomly from the bag.
 2. The order of players will be determined based on the order of the letters drawn, ranging from the smallest to the largest. If an empty tile is drawn, it will be returned to the bag and another one will be drawn instead.
 3. All tiles will be returned to the bag.
