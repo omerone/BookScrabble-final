@@ -57,12 +57,6 @@ public class Controller {
         stage.show();
     }
 
-    //server com.example.demo.test
-    public void serverAndClientTest(){
-        Server server = new Server();
-        server.connectClient();
-    }
-
 
     @FXML private Label myLable;
     @FXML private TextField portTextField;
