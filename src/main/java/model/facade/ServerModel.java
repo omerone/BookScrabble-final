@@ -1,13 +1,12 @@
 package model.facade;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 
 import model.logical.BookScrabbleHandler;
 import model.logical.MyServer;
 
 import java.util.Observable;
+import java.util.Observer;
 
-public class Model extends Observable {
+public class ServerModel extends Observable  {
 
     public void startServer() {
         MyServer myServer = new MyServer(3000, new BookScrabbleHandler());
@@ -15,4 +14,5 @@ public class Model extends Observable {
         setChanged();
         notifyObservers();
     }
+
 }
