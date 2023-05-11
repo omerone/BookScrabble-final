@@ -12,16 +12,17 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import model.logical.BookScrabbleHandler;
 import model.logical.ClientHandler;
 import model.logical.MyServer;
 
 import java.io.IOException;
 
-public class Controller implements Observable {
+public class Controller {
     private Stage stage;
     private Scene scene;
     int port1;
-    long ip1;
+    int ip1;
 
     //FXML layers for the buttons.
     public void playLocal(ActionEvent event) throws IOException {
@@ -73,16 +74,12 @@ public class Controller implements Observable {
 
     public void submitIpAndPort(ActionEvent event){
         try {
-            ip1 = Long.parseLong(portTextField.getText());
+            ip1 = Integer.parseInt(portTextField.getText());
             port1 = Integer.parseInt(ipTextField.getText());
-//            if(!connect){
-//
-//            }
-//            eles {
-//
-//            }
-            myLable.setText("Connect successfully to the server ! ");
-            myLable.styleProperty().setValue("-fx-text-fill: green");
+            MyServer myServer = new MyServer(ip1, new BookScrabbleHandler());
+            myServer.start();
+            myLable.setText("Connect successfully to the server !");
+            myLable.styleProperty().setValue("-fx-text-fill:    green");
         }
         catch (NumberFormatException e){
             myLable.setText("Please enter a valid IP and valid Port");
@@ -91,35 +88,4 @@ public class Controller implements Observable {
             myLable.setText("Error!");
         }
     }
-
-    @Override
-    public void addListener(InvalidationListener invalidationListener) {
-
-    }
-
-    @Override
-    public void removeListener(InvalidationListener invalidationListener) {
-
-    }
-
-
-
-//    public static class ClientHandler1 implements ClientHandler{
-//        PrintWriter out;
-//        Scanner in;
-//        @Override
-//        public void handleClient(InputStream infromclient, OutputStream outToclient) {
-//            out = new PrintWriter(outToclient);
-//            in = new Scanner(infromclient);
-//            String text = in.next();
-//            out.println(new StringBuilder(text).reverse().toString());
-//            out.flush();
-//        }
-//
-//        @Override
-//        public void close() {
-//            in.close();
-//            out.close();
-//        }
-//    }
 }

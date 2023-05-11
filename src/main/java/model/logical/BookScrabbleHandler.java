@@ -6,10 +6,11 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public abstract class BookScrabbleHandler implements ClientHandler{
+public class BookScrabbleHandler implements ClientHandler{
 
     String line;
     String[] words;
+
 
     @Override
     public void handleClient(InputStream inFromclient , OutputStream outToClient) {
