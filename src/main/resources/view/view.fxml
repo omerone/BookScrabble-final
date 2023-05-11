@@ -12,7 +12,7 @@
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="view.Controller">
    <center>
-      <VBox alignment="CENTER" onDragDetected="#settings" prefHeight="605.0" prefWidth="745.0" spacing="20.0">
+      <VBox alignment="CENTER" onDragDetected="#settings" prefHeight="600.0" prefWidth="1000.0" spacing="20.0">
           <padding>
               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
           </padding>
