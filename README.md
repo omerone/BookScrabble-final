@@ -85,7 +85,25 @@ o Squares that triple the value of the entire word (red)
 7. A player who is unable to form a legal word will skip their turn.
 8. The game will conclude after N rounds."
 
-
+### User Story:
+As an end-user, I want to understand the rules of Book Scrabble so that I can play the game effectively and enjoyably.
+User Stories for each feature/functionality:
+As a player, I want to randomly draw a tile from the bag to determine my order in the game, so that the game is fair and unpredictable.
+As a player, I want the order of players to be determined by the order of the letters drawn (from smallest to largest), so that the game is fair and unpredictable.
+As a player, I want to return any empty tile drawn back to the bag and draw another one, so that the game remains fair and consistent.
+As a player, I want to randomly draw 7 tiles to start the game, so that I can start forming words on the board.
+As the first player, I want to form a legal word that passes through the central slot (the star) on the board, so that I can score double points for it.
+As a player, I want to complete from the bag after forming a word, so that I always have 7 tiles in my possession.
+As a player, I want to assemble a legal word from the tiles in my possession, resting on one of the tiles on the board, so that I can score points and add new words to the board.
+As a player, I want to add 7 tiles from the bag after forming a word, so that I can continue forming new words on the board.
+As a player, I want my score to be accumulated according to all the words created on the board following the placement of the tiles, so that I can keep track of my score.
+As a player, I want the value of tiles placed on double or triple letter squares to be doubled or tripled respectively, so that I can score more points.
+As a player, I want the value of words to be doubled or tripled for each word multiplication or tripling slot that is one of the tiles superimposed on it, so that I can score more points.
+As a player, I want to be able to multiply my score by 4 or 9 if the word took two double word or triple word slots respectively, so that I can score even more points.
+As a player, I want the above calculation to be true for every new word created on the board following the placement in the queue, so that I can keep track of my score.
+As a player, I want to give up my turn if I cannot form a legal word, so that the game can continue.
+As a player, I want the game to end after N rounds, so that there is a clear ending to the game.
+As a player, I want a legal word to meet all of the following conditions: be written from left to right or from top to bottom (and not in any other way), appear in one of the books chosen for the game, lean on one of the existing tiles on the board, and not produce other illegal words on the board, so that the game remains fair and consistent.
 
 
 A legal word must meet all of the following conditions:
