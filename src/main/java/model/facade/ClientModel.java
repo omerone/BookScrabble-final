@@ -10,6 +10,7 @@ public class ClientModel extends Observable {
 
     public void connect(String serverAddress, int port) throws IOException {
         socket = new Socket(serverAddress, port);
+        socket.connect(socket.getRemoteSocketAddress());
         reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         writer = new PrintWriter(socket.getOutputStream(), true);
         setChanged();
