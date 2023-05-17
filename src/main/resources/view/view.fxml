@@ -8,13 +8,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="view.Controller">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controller">
    <children>
       <AnchorPane prefHeight="635.0" prefWidth="1000.0">
          <children>
-            <Button contentDisplay="CENTER" layoutX="417.0" layoutY="201.0" onAction="#playLocal" prefWidth="200.0" text="Play local ">
+            <Button contentDisplay="CENTER" layoutX="408.0" layoutY="201.0" onAction="#playLocal" prefHeight="77.0" prefWidth="224.0" text="Play local ">
                <font>
                   <Font size="36.0" />
                </font>

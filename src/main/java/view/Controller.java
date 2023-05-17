@@ -12,9 +12,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import model.logical.BookScrabbleHandler;
-import model.logical.ClientHandler;
-import model.logical.MyServer;
+import model.facade.FacadeServer;
+import test.MainTrain1;
 
 import java.io.IOException;
 
@@ -22,7 +21,7 @@ public class Controller {
     private Stage stage;
     private Scene scene;
     int port1;
-    int ip1;
+    long ip1;
 
     //FXML layers for the buttons.
     public void playLocal(ActionEvent event) throws IOException {
@@ -68,12 +67,10 @@ public class Controller {
 
     public void submitIpAndPort(ActionEvent event){
         try {
-            ip1 = Integer.parseInt(portTextField.getText());
+            ip1 = Long.parseLong(portTextField.getText());
             port1 = Integer.parseInt(ipTextField.getText());
-            MyServer myServer = new MyServer(ip1, new BookScrabbleHandler());
-            myServer.start();
-            myLable.setText("Connect successfully to the server !");
-            myLable.styleProperty().setValue("-fx-text-fill:    green");
+//
+            myLable.setText("Connect successfully to the server ! ");
         }
         catch (NumberFormatException e){
             myLable.setText("Please enter a valid IP and valid Port");
@@ -82,4 +79,9 @@ public class Controller {
             myLable.setText("Error!");
         }
     }
+
+    public void startTest(){
+        FacadeServer.startServer();
+    }
+
 }
