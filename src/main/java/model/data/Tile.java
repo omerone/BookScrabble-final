@@ -7,7 +7,7 @@ public class Tile {
     public final int score;
     public final char letter;
 
-    private Tile(int score, char letter) {
+    public Tile(int score, char letter) {
         this.letter = letter;
         this.score = score;
     }

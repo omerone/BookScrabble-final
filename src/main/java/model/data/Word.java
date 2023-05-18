@@ -3,7 +3,6 @@ package model.data;
 import java.util.Arrays;
 
 public class Word {
-
     Tile [] tiles;
     int row,col;
     boolean vertical;

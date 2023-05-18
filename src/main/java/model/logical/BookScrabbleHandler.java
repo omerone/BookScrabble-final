@@ -24,7 +24,7 @@ public class BookScrabbleHandler implements ClientHandler{
         } catch (Exception e){e.printStackTrace();}
         DictionaryManager dM = new DictionaryManager();
 
-        String words2 [] = new String[words.length-1];
+        String[] words2 = new String[words.length-1];
         for(int i =0 , s=1; s<words.length; i++ , s++){
             words2[i] = words[s];
         }

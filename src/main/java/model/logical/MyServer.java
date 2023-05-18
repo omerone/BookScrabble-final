@@ -10,8 +10,8 @@ import java.net.SocketTimeoutException;
 
 public class MyServer {
 
-    private int port;
-    private ClientHandler ch;
+    private final int port;
+    private final ClientHandler ch;
     private volatile boolean stop;
 
     public MyServer(int port, ClientHandler clientHandler){
@@ -56,14 +56,4 @@ public class MyServer {
         server.close();
     }
 
-    public void readInputAndSend(BufferedReader in , PrintWriter out , String exit_str){
-        try {
-            String line;
-            while (!(line = in.readLine()).equals(exit_str)){
-                out.println(line);
-                out.flush();
-            }
-        }
-        catch (Exception e){e.printStackTrace();}
-    }
 }
