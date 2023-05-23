@@ -36,7 +36,7 @@ public class MyServer {
 
     private void runServer()throws Exception{
         ServerSocket server = new ServerSocket(port);
-        server.setSoTimeout(1000);
+        server.setSoTimeout(100*1000);
         while (!stop) {
             try {
                 Socket aClient = server.accept();

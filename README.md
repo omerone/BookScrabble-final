@@ -4,9 +4,9 @@ Book Scrabble is a word game that challenges players to form words using letter 
 In this version of the game, all the words must be related to books, authors, or literary themes.
 
 ## Table of Contents
-- [Overview](Overview.md)
-- [Features](Features.md)
-- [Usage](Usage.md)
+- [Overview](#Overview.md)
+- [Features](#Features.md)
+- [Usage](#Usage.md)
 
 ## Overview
 A Desktop application named Book Scrabble Game permits users to establish an account, either create or participate in a game, and engage in online gameplay against other players. The game is played on a board with a grid of letter tiles, where players alternate in placing tiles to create words. The score is determined by the words' length and complexity, in addition to any bonus tiles used.
