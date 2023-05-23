@@ -18,7 +18,6 @@ public class Player {
             Tile tile = bag.getRand();
             tilesHand.add(tile);
         }
-
     }
 
 }
