@@ -1,9 +1,10 @@
 package model.data;
 
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.Random;
 
-public class Tile {
+public class Tile implements Serializable {
     public final int score;
     public final char letter;
 
@@ -25,7 +26,7 @@ public class Tile {
         return Objects.hash(score, letter);
     }
 
-    public static class Bag {
+    public static class Bag implements Serializable {
         int[] lettersInBagOriginal = {9, 2, 2, 4, 12, 2, 3, 2, 9, 1, 1, 4, 2, 6, 8, 2, 1, 6, 4, 6, 4, 2, 2, 1, 2, 1};
         int[] lettersInBag = {9, 2, 2, 4, 12, 2, 3, 2, 9, 1, 1, 4, 2, 6, 8, 2, 1, 6, 4, 6, 4, 2, 2, 1, 2, 1};
         int TilesInBagQuantity = 98;

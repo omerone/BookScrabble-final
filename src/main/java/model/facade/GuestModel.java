@@ -1,16 +1,27 @@
 package model.facade;
 
 import model.data.Board;
-import model.data.Tile;
 
 import java.io.*;
 import java.net.Socket;
 import java.util.Observable;
 public class GuestModel extends Observable {
+    PlayerStreamLogic playerStreamLogic = new PlayerStreamLogic();
     private Socket socket;
-    Player player;
     public Board board = Board.getBoard();
-    Player Player = new Player();
+    Player player = new Player();
+
+    public void connectToServer(){
+        try {
+            socket = new Socket("localhost", 8000);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void streamPlayer(){
+        playerStreamLogic.streamPlayer(socket, player);
+    }
+
 
 
 }
