@@ -12,7 +12,6 @@ import java.util.Observable;
 
 public class HostModel extends Observable {
 
-    PlayerStreamLogic playerStreamLogic = new PlayerStreamLogic();
     public Board board = Board.getBoard();
     Socket socket = null;
     Player player = new Player();
@@ -32,9 +31,6 @@ public class HostModel extends Observable {
         }
         System.out.println("host server started");
     }
-    public void streamPlayer(){
-        playerStreamLogic.streamPlayer(socket, player);
-    }
 
     public void closeHostServer() {
         hostServer.close();
@@ -49,6 +45,9 @@ public class HostModel extends Observable {
 
     public void addGuestPlayer(Player player) {
         guestPlayersList.add(player);
+    }
+    public List<Player> getGuestPlayersList() {
+        return guestPlayersList;
     }
 }
 

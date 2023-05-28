@@ -2,11 +2,9 @@ package model.facade;
 
 import model.logical.ClientHandler;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.ObjectInputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.util.List;
+import java.util.Scanner;
 
 public class GuestHandler implements ClientHandler {
     private HostModel hostModel;
@@ -16,12 +14,53 @@ public class GuestHandler implements ClientHandler {
     }
     @Override
     public void handleClient(InputStream inFromclient, OutputStream outToClient) {
-        try {
-            ObjectInputStream objectInputStream = new ObjectInputStream(inFromclient);
-            Player player = (Player) objectInputStream.readObject();
-            hostModel.addGuestPlayer(player);
-        } catch (IOException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
+        Scanner scanner = new Scanner(inFromclient);
+        String message = scanner.nextLine();
+        String[] messageSplit = message.split(";");
+        if (messageSplit[0].equals("startNewGame")) {
+            hostModel.startHostServer();
+        } else if (messageSplit[0].equals("getBoard")) {
+            try {
+                ObjectOutputStream objectOutputStream = new ObjectOutputStream(outToClient);
+                objectOutputStream.writeObject(hostModel.board);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else if (messageSplit[0].equals("getTilesHand")) {
+            try {
+                ObjectOutputStream objectOutputStream = new ObjectOutputStream(outToClient);
+                objectOutputStream.writeObject(hostModel.player.tilesHand);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else if (messageSplit[0].equals("getScore")) {
+            try {
+                ObjectOutputStream objectOutputStream = new ObjectOutputStream(outToClient);
+                objectOutputStream.writeObject(hostModel.player.getScore());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else if (messageSplit[0].equals("getBagSize")) {
+            try {
+                ObjectOutputStream objectOutputStream = new ObjectOutputStream(outToClient);
+                objectOutputStream.writeObject(hostModel.player.bag.size());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else if (messageSplit[0].equals("getBag")) {
+            try {
+                ObjectOutputStream objectOutputStream = new ObjectOutputStream(outToClient);
+                objectOutputStream.writeObject(hostModel.player.bag);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else if (messageSplit[0].equals("getPlayers")) {
+            try {
+                ObjectOutputStream objectOutputStream = new ObjectOutputStream(outToClient);
+                objectOutputStream.writeObject(hostModel.getGuestPlayersList());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 

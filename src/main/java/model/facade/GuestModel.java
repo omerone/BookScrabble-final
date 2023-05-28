@@ -18,11 +18,5 @@ public class GuestModel extends Observable {
             e.printStackTrace();
         }
     }
-    public void streamPlayer(){
-        playerStreamLogic.streamPlayer(socket, player);
-    }
-
-
-
 }
 

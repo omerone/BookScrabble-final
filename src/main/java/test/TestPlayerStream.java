@@ -12,6 +12,7 @@ public class TestPlayerStream {
         guestModel.connectToServer();
         guestModel.streamPlayer();
         System.out.println(hostModel.getConnectedPlayersNumber());
+
         hostModel.closeHostServer();
     }
 }
