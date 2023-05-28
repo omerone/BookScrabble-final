@@ -4,7 +4,6 @@ import bookScrabble.model.data.Board;
 import bookScrabble.model.data.Tile;
 import bookScrabble.model.facade.GuestHandler;
 import bookScrabble.model.facade.Player;
-import bookScrabble.model.facade.PlayerStreamLogic;
 import bookScrabble.model.gameCommunication.MyServer;
 
 import java.io.IOException;
@@ -17,7 +16,7 @@ public class HostModel extends Observable {
 
     public Board board = Board.getBoard();
     Socket socket = null;
-    Player player = new Player();
+    public Player player = new Player();
     private MyServer hostServer;
     private List<Player> guestPlayersList = new ArrayList<>();
     //private MyServer gameServer = new MyServer(8080, new BookScrabbleHandler());

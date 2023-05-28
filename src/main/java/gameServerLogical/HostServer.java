@@ -1,4 +1,4 @@
-package model.logical;
+package gameServerLogical;
 
 
 import java.io.IOException;

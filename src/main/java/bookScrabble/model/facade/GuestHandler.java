@@ -1,6 +1,9 @@
-package model.facade;
+package bookScrabble.model.facade;
 
-import model.logical.ClientHandler;
+
+
+import bookScrabble.model.gameCommunication.ClientHandler;
+import bookScrabble.model.logical.HostModel;
 
 import java.io.*;
 import java.util.List;
