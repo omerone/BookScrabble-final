@@ -8,6 +8,9 @@ public class Game {
     public void addPlayer(GuestModel guestModel){
         hostModel.addGuestPlayer(guestModel.getPlayer());
         connectPlayerToHost(guestModel);
+    }
+    public void streamCommand(String command){
+
 
     }
     private void connectPlayerToHost(GuestModel guestModel) {

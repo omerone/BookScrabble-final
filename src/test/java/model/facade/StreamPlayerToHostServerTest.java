@@ -10,8 +10,6 @@ public class StreamPlayerToHostServerTest {
     public static void main(String[] args) {
         HostModel hostModel = new HostModel();
         hostModel.startHostServer();
-        GuestModel guestModel = new GuestModel();
-        Game game = new Game(hostModel);
-        game.addPlayer(guestModel);
+        hostModel.StreamMessage("testConnection");
     }
 }

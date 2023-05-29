@@ -6,6 +6,8 @@ import bookScrabble.model.data.Tile;
 import bookScrabble.model.communication.MyServer;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +17,9 @@ public class HostModel extends Observable {
 
     public Board board = Board.getBoard();
     public Socket socket = null;
+    InputStream inputStream;
+
+    OutputStream outputStream;
     public Player player = new Player();
     private MyServer hostServer;
     private List<Player> guestPlayersList = new ArrayList<>();
@@ -27,6 +32,8 @@ public class HostModel extends Observable {
         hostServer.start();
         try {
             socket = new Socket("localhost", 8000);
+            inputStream = socket.getInputStream();
+            outputStream = socket.getOutputStream();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -50,6 +57,14 @@ public class HostModel extends Observable {
     public List<Player> getGuestPlayersList() {
         return guestPlayersList;
     }
+    public void StreamMessage(String message) {
+        try {
+            outputStream.write(message.getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
 
 

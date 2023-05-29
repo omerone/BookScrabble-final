@@ -63,6 +63,8 @@ public class GuestHandler implements ClientHandler {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        } else if (messageSplit[0].equals("testConnection")) {
+            System.out.println("you mannaged to connect to the server!");
         }
     }
 
