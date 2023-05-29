@@ -1,5 +1,7 @@
 package bookScrabble.model.logical;
 
+import bookScrabble.model.communication.GuestHandler;
+
 public class GameInGuestMode {
     GuestHandler guestHandler;
 

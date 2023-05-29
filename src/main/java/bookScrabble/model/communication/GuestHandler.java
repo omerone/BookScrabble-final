@@ -1,4 +1,4 @@
-package bookScrabble.model.logical;
+package bookScrabble.model.communication;
 
 
 

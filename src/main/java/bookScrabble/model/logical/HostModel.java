@@ -1,5 +1,6 @@
 package bookScrabble.model.logical;
 
+import bookScrabble.model.communication.GuestHandler;
 import bookScrabble.model.data.Board;
 import bookScrabble.model.data.Tile;
 import bookScrabble.model.communication.MyServer;
