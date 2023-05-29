@@ -1,6 +1,8 @@
 package bookScrabble.model.gameLogic;
 
 
+import bookScrabble.model.communication.ClientHandler;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;

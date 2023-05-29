@@ -11,12 +11,15 @@ public class GuestModel extends Observable {
     public Board board = Board.getBoard();
     Player player = new Player();
 
-    public void connectToServer(){
+    public void connectToServer(String ip, int port){
         try {
-            socket = new Socket("localhost", 8000);
+            socket = new Socket(ip, port);
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public Player getPlayer(){
+        return player;
     }
 }
 

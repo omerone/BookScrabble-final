@@ -42,6 +42,7 @@ public class MyServer {
         server.setSoTimeout(1000);
         while (!stop) {
             try {
+                System.out.println("client connected");
                 Socket aClient = server.accept();
                 String id =UUID.randomUUID().toString().substring(0,6);
                 players.put(id , aClient);

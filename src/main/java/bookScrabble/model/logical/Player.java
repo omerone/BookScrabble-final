@@ -9,8 +9,8 @@ import java.util.List;
 public class Player implements Serializable {
     private int score;
     Tile[][] board;
-    List<Tile> tilesHand;
-    Tile.Bag bag = Tile.Bag.getBag();
+    public List<Tile> tilesHand;
+    public Tile.Bag bag = Tile.Bag.getBag();
 
     public Player(){
         score = 0;

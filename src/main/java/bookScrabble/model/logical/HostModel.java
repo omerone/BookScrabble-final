@@ -1,5 +1,6 @@
 package bookScrabble.model.logical;
 
+import bookScrabble.model.communication.GuestHandler;
 import bookScrabble.model.data.Board;
 import bookScrabble.model.data.Tile;
 import bookScrabble.model.communication.MyServer;
@@ -13,7 +14,7 @@ import java.util.Observable;
 public class HostModel extends Observable {
 
     public Board board = Board.getBoard();
-    Socket socket = null;
+    public Socket socket = null;
     public Player player = new Player();
     private MyServer hostServer;
     private List<Player> guestPlayersList = new ArrayList<>();
