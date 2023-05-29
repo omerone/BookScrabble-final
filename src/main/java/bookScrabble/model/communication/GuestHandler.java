@@ -18,6 +18,9 @@ public class GuestHandler implements ClientHandler {
         String message = scanner.nextLine();
         String[] messageSplit = message.split(";");
 
+        if(messageSplit[0].equals("close")){
+            return;
+        }
         if (messageSplit[0].equals("startNewGame")) {
             hostModel.startHostServer();
         }

@@ -15,6 +15,7 @@ public class GuestModel extends Observable {
     public void connectToServer(){
         try {
             socket = new Socket("localhost", 8000);
+            System.out.println("connected to server");
         } catch (IOException e) {
             e.printStackTrace();
         }

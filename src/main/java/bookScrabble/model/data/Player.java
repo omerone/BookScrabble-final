@@ -54,4 +54,7 @@ public class Player implements Serializable {
         this.tilesHand = tilesHand;
     }
 
+    public void sendToGuest(String getBoard) {
+
+    }
 }

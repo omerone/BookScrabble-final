@@ -43,7 +43,9 @@ public class HostServer {
             try {
                 Socket aClient = server.accept();
                 String id = UUID.randomUUID().toString().substring(0,6);
-                players.put(id , aClient);
+                if(id != null){
+                    players.put(id , aClient);
+                }
                 //ping(id);
                 try {
                     ch.handleClient(aClient.getInputStream(), aClient.getOutputStream());
@@ -51,10 +53,12 @@ public class HostServer {
                     aClient.getInputStream();
                     aClient.getOutputStream();
 
-                } catch (IOException e) {
+                }
+                catch (IOException e) {
                     e.printStackTrace();
                 }
-            } catch (SocketTimeoutException e) {
+            }
+            catch (SocketTimeoutException e) {
                 e.printStackTrace();
             }
         }
