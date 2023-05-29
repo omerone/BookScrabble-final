@@ -1,6 +1,7 @@
 package bookScrabble.model.logical;
 
 import bookScrabble.model.data.Board;
+import bookScrabble.model.data.Player;
 
 import java.io.*;
 import java.net.Socket;

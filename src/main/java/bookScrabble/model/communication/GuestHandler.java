@@ -1,7 +1,5 @@
 package bookScrabble.model.communication;
 
-
-import bookScrabble.model.communication.ClientHandler;
 import bookScrabble.model.logical.HostModel;
 
 import java.io.*;
@@ -19,9 +17,11 @@ public class GuestHandler implements ClientHandler {
         Scanner scanner = new Scanner(inFromclient);
         String message = scanner.nextLine();
         String[] messageSplit = message.split(";");
+
         if (messageSplit[0].equals("startNewGame")) {
             hostModel.startHostServer();
-        } else if (messageSplit[0].equals("getBoard")) {
+        }
+        else if (messageSplit[0].equals("getBoard")) {
             try {
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(outToClient);
                 objectOutputStream.writeObject(hostModel.board);
@@ -31,28 +31,28 @@ public class GuestHandler implements ClientHandler {
         } else if (messageSplit[0].equals("getTilesHand")) {
             try {
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(outToClient);
-                objectOutputStream.writeObject(hostModel.player.tilesHand);
+                objectOutputStream.writeObject(hostModel.player.getTilesHand());
             } catch (IOException e) {
                 e.printStackTrace();
             }
         } else if (messageSplit[0].equals("getScore")) {
             try {
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(outToClient);
-                objectOutputStream.writeObject(hostModel.player.getScore());
+                objectOutputStream.writeObject(hostModel.player.getPlayerScore());
             } catch (IOException e) {
                 e.printStackTrace();
             }
         } else if (messageSplit[0].equals("getBagSize")) {
             try {
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(outToClient);
-                objectOutputStream.writeObject(hostModel.player.bag.size());
+                objectOutputStream.writeObject(hostModel.player.getTilesHand().size());
             } catch (IOException e) {
                 e.printStackTrace();
             }
         } else if (messageSplit[0].equals("getBag")) {
             try {
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(outToClient);
-                objectOutputStream.writeObject(hostModel.player.bag);
+                objectOutputStream.writeObject(hostModel.player.getTilesHand());
             } catch (IOException e) {
                 e.printStackTrace();
             }
