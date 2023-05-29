@@ -1,7 +1,6 @@
 package bookScrabble.model.communication;
 
 
-
 import bookScrabble.model.communication.ClientHandler;
 import bookScrabble.model.logical.HostModel;
 
@@ -14,6 +13,7 @@ public class GuestHandler implements ClientHandler {
     public GuestHandler(HostModel hostModel) {
         this.hostModel = hostModel;
     }
+
     @Override
     public void handleClient(InputStream inFromclient, OutputStream outToClient) {
         Scanner scanner = new Scanner(inFromclient);

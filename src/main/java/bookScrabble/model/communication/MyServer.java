@@ -13,14 +13,11 @@ public class MyServer {
     private final int port;
     private final ClientHandler ch;
     private volatile boolean stop;
-    Map<String , Socket> players;
-    System.Logger logger;
 
     public MyServer(int port, ClientHandler clientHandler){
         this.port = port;
         this.ch = clientHandler;
         this.stop = false;
-        players = new HashMap <String, Socket>();
     }
 
     public void start (){
@@ -43,9 +40,6 @@ public class MyServer {
         while (!stop) {
             try {
                 Socket aClient = server.accept();
-                String id =UUID.randomUUID().toString().substring(0,6);
-                players.put(id , aClient);
-                ping(id);
                 try {
                     ch.handleClient(aClient.getInputStream(), aClient.getOutputStream());
 
@@ -60,28 +54,6 @@ public class MyServer {
             }
         }
         server.close();
-    }
-
-    private void ping(String clientID) {
-        updateSpecificPlayer(clientID, "ping:" + clientID);
-    }
-
-    public void updateSpecificPlayer(String id, Object obj) {
-
-        Socket s = players.get(id);
-        PrintWriter out;
-        try {
-            if (s != null) {
-                out = new PrintWriter(s.getOutputStream());
-                out.println(obj);
-                out.flush();
-            }
-        } catch (IOException e) {
-            logger.log(System.Logger.Level.ERROR, "Error in update specific player: getting output stream");
-            throw new RuntimeException(e);
-        }
-
-
     }
 
 }
