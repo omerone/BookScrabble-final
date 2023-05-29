@@ -18,7 +18,6 @@ public class HostModel extends Observable {
     public Board board = Board.getBoard();
     public Socket socket = null;
     InputStream inputStream;
-
     OutputStream outputStream;
     public Player player = new Player();
     private MyServer hostServer;
