@@ -1,4 +1,4 @@
-package bookScrabble.model.facade;
+package bookScrabble.model.logical;
 
 import bookScrabble.model.logical.HostModel;
 

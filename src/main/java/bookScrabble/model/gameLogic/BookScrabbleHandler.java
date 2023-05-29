@@ -1,7 +1,7 @@
-package gameServerLogical;
+package bookScrabble.model.gameLogic;
 
 
-import bookScrabble.model.gameCommunication.ClientHandler;
+import bookScrabble.model.communication.ClientHandler;
 
 import java.io.InputStream;
 import java.io.OutputStream;

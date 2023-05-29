@@ -1,6 +1,4 @@
-package bookScrabble.model.gameCommunication;
-
-import bookScrabble.model.gameCommunication.ClientHandler;
+package bookScrabble.model.communication;
 
 import java.io.IOException;
 import java.net.ServerSocket;

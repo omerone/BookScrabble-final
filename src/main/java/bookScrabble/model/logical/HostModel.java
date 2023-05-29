@@ -2,9 +2,7 @@ package bookScrabble.model.logical;
 
 import bookScrabble.model.data.Board;
 import bookScrabble.model.data.Tile;
-import bookScrabble.model.facade.GuestHandler;
-import bookScrabble.model.facade.Player;
-import bookScrabble.model.gameCommunication.MyServer;
+import bookScrabble.model.communication.MyServer;
 
 import java.io.IOException;
 import java.net.Socket;

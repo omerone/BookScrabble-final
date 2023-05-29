@@ -1,4 +1,4 @@
-package bookScrabble.model.facade;
+package bookScrabble.model.logical;
 
 public class GameInGuestMode {
     GuestHandler guestHandler;
