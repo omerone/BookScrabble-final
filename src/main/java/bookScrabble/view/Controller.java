@@ -10,8 +10,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import gameServerLogical.BookScrabbleHandler;
-import bookScrabble.model.gameCommunication.MyServer;
+import bookScrabble.model.gameLogic.BookScrabbleHandler;
+import bookScrabble.model.communication.MyServer;
 
 import java.io.IOException;
 

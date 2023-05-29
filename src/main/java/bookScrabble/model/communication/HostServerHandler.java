@@ -1,6 +1,4 @@
-package bookScrabble.model.gameCommunication;
-
-import bookScrabble.model.gameCommunication.ClientHandler;
+package bookScrabble.model.communication;
 
 import java.io.InputStream;
 import java.io.OutputStream;

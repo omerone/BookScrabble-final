@@ -1,4 +1,4 @@
-package gameServerLogical;
+package bookScrabble.model.gameLogic;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -1,4 +1,4 @@
-package gameServerLogical;
+package bookScrabble.model.gameLogic;
 
 
 import java.io.IOException;

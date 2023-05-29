@@ -1,4 +1,4 @@
-package gameServerLogical;
+package bookScrabble.model.gameLogic;
 
 public interface CacheReplacementPolicy{
 	void add(String word);

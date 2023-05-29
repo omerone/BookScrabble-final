@@ -1,12 +1,11 @@
-package bookScrabble.model.facade;
+package bookScrabble.model.logical;
 
 
 
-import bookScrabble.model.gameCommunication.ClientHandler;
+import bookScrabble.model.communication.ClientHandler;
 import bookScrabble.model.logical.HostModel;
 
 import java.io.*;
-import java.util.List;
 import java.util.Scanner;
 
 public class GuestHandler implements ClientHandler {

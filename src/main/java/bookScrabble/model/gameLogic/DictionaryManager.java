@@ -1,4 +1,4 @@
-package gameServerLogical;
+package bookScrabble.model.gameLogic;
 
 import java.util.HashMap;
 import java.util.Map;

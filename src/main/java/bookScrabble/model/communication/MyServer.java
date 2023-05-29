@@ -1,7 +1,5 @@
-package bookScrabble.model.gameCommunication;
+package bookScrabble.model.communication;
 
-
-import bookScrabble.model.gameCommunication.ClientHandler;
 
 import java.io.IOException;
 import java.io.PrintWriter;

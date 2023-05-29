@@ -7,8 +7,8 @@ module view.bookscrabblefinal {
     exports bookScrabble.view;
     exports bookScrabble.model.logical;
     opens bookScrabble.model.logical to javafx.fxml;
-    exports gameServerLogical;
-    opens gameServerLogical to javafx.fxml;
-    exports bookScrabble.model.gameCommunication;
-    opens bookScrabble.model.gameCommunication to javafx.fxml;
+    exports bookScrabble.model.gameLogic;
+    opens bookScrabble.model.gameLogic to javafx.fxml;
+    exports bookScrabble.model.communication;
+    opens bookScrabble.model.communication to javafx.fxml;
 }
