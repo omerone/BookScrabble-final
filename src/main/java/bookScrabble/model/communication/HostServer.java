@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
@@ -14,12 +15,12 @@ public class HostServer {
     private final ClientHandler ch;
     private volatile boolean stop;
     Map<String , Socket> players;
-    System.Logger logger;
 
     public HostServer(int port, ClientHandler clientHandler){
         this.port = port;
         this.ch = clientHandler;
         this.stop = false;
+        players = new HashMap<>();
     }
 
     public void close() {
@@ -64,6 +65,7 @@ public class HostServer {
         }
         server.close();
     }
+
 
 //    private void ping(String clientID) {
 //        updateSpecificPlayer(clientID, "ping:" + clientID);

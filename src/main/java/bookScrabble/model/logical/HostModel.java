@@ -16,14 +16,24 @@ import java.util.Observable;
 
 public class HostModel extends Observable {
 
-    public Board board = Board.getBoard();
-    Socket socket = null;
-    public Player player = new Player();
+    //variables
+    public Board board;
+    Socket socket;
+    public Player player;
     private HostServer hostServer;
-    private List<Player> guestPlayersList = new ArrayList<>();
-    private Tile.Bag bag = Tile.Bag.getBag();
-    private BuildTilesModel buildTilesModel = new BuildTilesModel();
+    private List<Player> guestPlayersList;
+    private Tile.Bag bag;
 
+    //ctor
+    public HostModel(){
+        board = Board.getBoard();
+        socket = null;
+        player = new Player();
+        guestPlayersList = new ArrayList<>();
+        bag = Tile.Bag.getBag();
+    }
+
+    //methods
     public void startHostServer() {
         GuestHandler hs = new GuestHandler(new HostModel());
         hostServer = new HostServer(8000 , hs);
@@ -54,17 +64,24 @@ public class HostModel extends Observable {
         }
         hostServer.close();
     }
+
     public int getConnectedPlayersNumber(){
         return guestPlayersList.size();
     }
 
+    public List<Player> getGuestPlayersList() {
+        return guestPlayersList;
+    }
 
     public void addGuestPlayer(Player player) {
         guestPlayersList.add(player);
     }
-    public List<Player> getGuestPlayersList() {
-        return guestPlayersList;
+
+    public boolean removeGuestPlayer(Player player) {
+        return guestPlayersList.remove(player);
     }
+
+
 }
 
 
