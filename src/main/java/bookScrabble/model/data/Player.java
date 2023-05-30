@@ -1,25 +1,27 @@
 package bookScrabble.model.data;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Player implements Serializable {
 
-    private final String playerSocketID;
+    private final String playerID;
     private String playerName;
     private int playerIndex;
     private int playerScore;
-    private List<Tile> tilesHand;
+    private List<Tile> playerTilesHand;
 
 
-    public Player() {
-        this.playerName = "Default";
+    public Player(String name) {
+        this.playerName = name;
         this.playerScore = 0;
-        this.playerSocketID = "";
+        this.playerID = "";
+        this.playerTilesHand = new ArrayList<>();
     }
 
     public String getPlayerSocketID() {
-        return playerSocketID;
+        return playerID;
     }
 
     public String getPlayerName() {
@@ -47,11 +49,11 @@ public class Player implements Serializable {
     }
 
     public List<Tile> getTilesHand() {
-        return tilesHand;
+        return playerTilesHand;
     }
 
     public void setTilesHand(List<Tile> tilesHand) {
-        this.tilesHand = tilesHand;
+        this.playerTilesHand = tilesHand;
     }
 
     public void sendToGuest(String getBoard) {

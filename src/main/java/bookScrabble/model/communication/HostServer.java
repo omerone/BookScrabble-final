@@ -1,11 +1,14 @@
 package bookScrabble.model.communication;
 
+import bookScrabble.model.logical.GameManager;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.UUID;
 
 
@@ -14,13 +17,13 @@ public class HostServer {
     private final int port;
     private final ClientHandler ch;
     private volatile boolean stop;
-    Map<String , Socket> players;
+    Map<String , Socket> playersSockets;
 
-    public HostServer(int port, ClientHandler clientHandler){
+    public HostServer(int port){
         this.port = port;
-        this.ch = clientHandler;
+        this.ch = new GuestHandler();
         this.stop = false;
-        players = new HashMap<>();
+        playersSockets = new HashMap<>();
     }
 
     public void close() {
@@ -40,50 +43,33 @@ public class HostServer {
     private void runServer()throws Exception{
         ServerSocket server = new ServerSocket(port);
         server.setSoTimeout(1000);
+        //waiting for clients to update
         while (!stop) {
-            try {
-                Socket aClient = server.accept();
-                String id = UUID.randomUUID().toString().substring(0,6);
-                if(id != null){
-                    players.put(id , aClient);
-                }
-                //ping(id);
+            //running and geting updates from clients
+            while(!GameManager.getInstance().isGameStarted()){
                 try {
-                    ch.handleClient(aClient.getInputStream(), aClient.getOutputStream());
-
-                    aClient.getInputStream();
-                    aClient.getOutputStream();
-
+                    Socket aClient = server.accept();
+                    if(playersSockets.size() < 4){
+                        Scanner scanner = new Scanner(aClient.getInputStream());
+                        String name;
+                        if(scanner.hasNextLine()){
+                            name = scanner.nextLine();
+                            playersSockets.put(name+playersSockets.size() , aClient);
+                            GameManager.getInstance().addPlayer(name+playersSockets.size());
+                        }
+                    }
                 }
-                catch (IOException e) {
+                catch (SocketTimeoutException e) {
                     e.printStackTrace();
                 }
             }
-            catch (SocketTimeoutException e) {
-                e.printStackTrace();
+
+            //after game started taking care of clients
+            while(GameManager.getInstance().isGameStarted()){
+
+
             }
         }
         server.close();
     }
-
-
-//    private void ping(String clientID) {
-//        updateSpecificPlayer(clientID, "ping:" + clientID);
-//    }
-//
-//    public void updateSpecificPlayer(String id, Object obj) {
-//
-//        Socket s = players.get(id);
-//        PrintWriter out;
-//        try {
-//            if (s != null) {
-//                out = new PrintWriter(s.getOutputStream());
-//                out.println(obj);
-//                out.flush();
-//            }
-//        } catch (IOException e) {
-//            logger.log(System.Logger.Level.ERROR, "Error in update specific player: getting output stream");
-//            throw new RuntimeException(e);
-//        }
-//    }
 }

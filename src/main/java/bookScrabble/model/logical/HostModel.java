@@ -28,24 +28,24 @@ public class HostModel extends Observable {
     public HostModel(){
         board = Board.getBoard();
         socket = null;
-        player = new Player();
+        //player = new Player();
         guestPlayersList = new ArrayList<>();
         bag = Tile.Bag.getBag();
     }
 
-    //methods
-    public void startHostServer() {
-        GuestHandler hs = new GuestHandler(new HostModel());
-        hostServer = new HostServer(8000 , hs);
-        hostServer.start();
-        try {
-            socket = new Socket("localhost", 8000);
-        }
-        catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println("host server started");
-    }
+//    //methods
+//    public void startHostServer() {
+//        GuestHandler hs = new GuestHandler();
+//        hostServer = new HostServer(8000);
+//        hostServer.start();
+//        try {
+//            socket = new Socket("localhost", 8000);
+//        }
+//        catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+//        System.out.println("host server started");
+//    }
 
     public void closeHostServer() {
         try {

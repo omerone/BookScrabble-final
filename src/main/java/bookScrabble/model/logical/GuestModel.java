@@ -6,19 +6,48 @@ import bookScrabble.model.data.Player;
 import java.io.*;
 import java.net.Socket;
 import java.util.Observable;
+import java.util.Scanner;
 
 public class GuestModel extends Observable {
-    private Socket socket;
-    public Board board = Board.getBoard();
-    Player player = new Player();
+    PrintWriter pw;
+    Scanner sc;
+    Socket socket;
 
-    public void connectToServer(){
+
+    public GuestModel(String name){
+        connectToServer(name);
+        waitingForServerUpdate();
+    }
+
+    public void connectToServer(String name){
         try {
             socket = new Socket("localhost", 8000);
-            System.out.println("connected to server");
+            pw = new PrintWriter(socket.getOutputStream());
+            pw.println(name);
+            sc = new Scanner(socket.getInputStream());
+            System.out.println("connected to server.");
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void waitingForServerUpdate(){
+        new Thread(()->{
+            while(socket.isConnected()){
+                String line = sc.nextLine();
+                //host can send back : error , wordisnotexict ....
+                switch (line){
+                    case "close" ->{
+                        System.out.println("server closed");
+                        break;
+                    }
+
+                    default -> {
+                        System.out.println("server sent: " + line);
+                    }
+                }
+            }
+        }).start();
     }
 }
 
