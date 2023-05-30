@@ -14,7 +14,6 @@ public class MyServer {
     private final ClientHandler ch;
     private volatile boolean stop;
     Map<String , Socket> players;
-    System.Logger logger;
 
     public MyServer(int port, ClientHandler clientHandler){
         this.port = port;
@@ -77,7 +76,6 @@ public class MyServer {
                 out.flush();
             }
         } catch (IOException e) {
-            logger.log(System.Logger.Level.ERROR, "Error in update specific player: getting output stream");
             throw new RuntimeException(e);
         }
 

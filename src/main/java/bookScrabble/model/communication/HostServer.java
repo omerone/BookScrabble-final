@@ -1,15 +1,12 @@
-package bookScrabble.model.gameLogic;
-
+package bookScrabble.model.communication;
 
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
-import java.util.HashMap;
 
 public class HostServer {
 
-    HashMap<Integer,Socket> clients = new HashMap<>();
     private final int port;
     private final ClientHandler ch;
     private volatile boolean stop;
@@ -36,13 +33,13 @@ public class HostServer {
 
     private void runServer()throws Exception{
         ServerSocket server = new ServerSocket(port);
-        server.setSoTimeout(100*1000);
+        server.setSoTimeout(1000);
         while (!stop) {
             try {
                 Socket aClient = server.accept();
                 try {
-                    clients.put(clients.size()+1,aClient);
                     ch.handleClient(aClient.getInputStream(), aClient.getOutputStream());
+
                     aClient.getInputStream();
                     aClient.getOutputStream();
 
@@ -55,6 +52,4 @@ public class HostServer {
         }
         server.close();
     }
-
 }
-

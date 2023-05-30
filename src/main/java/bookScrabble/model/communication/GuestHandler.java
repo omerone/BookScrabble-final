@@ -1,10 +1,6 @@
 package bookScrabble.model.communication;
 
-
-
-import bookScrabble.model.communication.ClientHandler;
 import bookScrabble.model.logical.HostModel;
-
 import java.io.*;
 import java.util.Scanner;
 
@@ -31,7 +27,7 @@ public class GuestHandler implements ClientHandler {
         } else if (messageSplit[0].equals("getTilesHand")) {
             try {
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(outToClient);
-                objectOutputStream.writeObject(hostModel.player.tilesHand);
+                objectOutputStream.writeObject(hostModel.player.getTilesHand());
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -45,14 +41,14 @@ public class GuestHandler implements ClientHandler {
         } else if (messageSplit[0].equals("getBagSize")) {
             try {
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(outToClient);
-                objectOutputStream.writeObject(hostModel.player.bag.size());
+                objectOutputStream.writeObject(hostModel.player.getBag().size());
             } catch (IOException e) {
                 e.printStackTrace();
             }
         } else if (messageSplit[0].equals("getBag")) {
             try {
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(outToClient);
-                objectOutputStream.writeObject(hostModel.player.bag);
+                objectOutputStream.writeObject(hostModel.player.getBag());
             } catch (IOException e) {
                 e.printStackTrace();
             }

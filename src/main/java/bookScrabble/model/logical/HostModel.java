@@ -2,6 +2,7 @@ package bookScrabble.model.logical;
 
 import bookScrabble.model.communication.GuestHandler;
 import bookScrabble.model.data.Board;
+import bookScrabble.model.data.Player;
 import bookScrabble.model.data.Tile;
 import bookScrabble.model.communication.MyServer;
 
@@ -13,14 +14,20 @@ import java.util.Observable;
 
 public class HostModel extends Observable {
 
-    public Board board = Board.getBoard();
-    Socket socket = null;
+    public Board board;
+    Socket socket;
     public Player player = new Player();
     private MyServer hostServer;
-    private List<Player> guestPlayersList = new ArrayList<>();
+    private List<Player> guestPlayersList;
     //private MyServer gameServer = new MyServer(8080, new BookScrabbleHandler());
-    private Tile.Bag bag = Tile.Bag.getBag();
-    private BuildTilesModel buildTilesModel = new BuildTilesModel();
+    private Tile.Bag bag;
+
+    public HostModel() {
+        board = Board.getBoard();
+        socket = null;
+        guestPlayersList = new ArrayList<>();
+        bag = Tile.Bag.getBag();
+    }
 
     public void startHostServer() {
         hostServer = new MyServer(8000, new GuestHandler(this));
