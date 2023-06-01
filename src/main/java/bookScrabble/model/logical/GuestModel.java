@@ -41,6 +41,22 @@ public class GuestModel extends Observable {
                         System.out.println("server closed");
                         break;
                     }
+                    case "start" ->{
+                        System.out.println("game started");
+                        break;
+                    }
+                    case "notYourTurn" ->{
+                        System.out.println("not your turn");
+                        break;
+                    }
+                    case "yourTurn" ->{
+                        System.out.println("your turn");
+                        break;
+                    }
+                    case "gameOver" ->{
+                        System.out.println("game over");
+                        break;
+                    }
 
                     default -> {
                         System.out.println("server sent: " + line);
